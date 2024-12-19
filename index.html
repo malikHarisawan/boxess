@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Image textures and materials</title>
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    </head>
+
+	
+    <body>
+        <a-scene>
+           
+            <a-assets>
+             
+                <img id="brick" src="brickwall.jpg">
+                <img id="brick-NRM" src="brickwall_normal.jpg">
+                <img id="rusted-NRM" src="normal.png">
+          
+            </a-assets>
+            
+         
+            <a-box color="#FFFFFF"
+                   src="albedo.png"
+                   repeat="1 1"
+                   normal-map="#rusted-NRM"
+                   normal-texture-repeat="1 1"
+                   normal-scale="1 -1"
+                   roughness="0.5"
+                
+                   width="4" height="4" depth="4"
+                   position="-2 1.5 -9"
+                   scale="-1 1 1">
+            </a-box>
+            
+            <a-box material="color: #FFFFFF;
+                             src: #brick;
+                             repeat: 2 2;
+                             normal-map: #brick-NRM;
+                             normal-texture-repeat: 2 2;
+                             normal-scale: 1 -1;
+                             roughness: 0.2"
+                   width="4" height="4" depth="4"
+                   position="2 1.5 -9"
+                   scale="-1 1 1">
+            </a-box>
+         
+            <a-sphere material="color: #0000AA;
+                                roughness: 0.2;
+                              
+                                shader: standard"
+                      radius="0.5"
+                      position="-2 1.5 -8" >
+            </a-sphere>
+           
+            <a-sphere material="color: #AA0000;
+                                roughness: 0.5;
+                                
+                                opacity: 0.5;"
+                      radius="0.5"
+                      position="2 1.5 -8">
+            </a-sphere>
+        </a-scene>
+    </body>
+</html>
